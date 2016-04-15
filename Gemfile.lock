@@ -1,0 +1,29 @@
+PATH
+  remote: .
+  specs:
+    aws_docker_utils (0.0.4)
+      aws-sdk
+      docopt
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    aws-sdk (2.2.34)
+      aws-sdk-resources (= 2.2.34)
+    aws-sdk-core (2.2.34)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.2.34)
+      aws-sdk-core (= 2.2.34)
+    docopt (0.5.0)
+    jmespath (1.2.4)
+      json_pure (>= 1.8.1)
+    json_pure (1.8.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  aws_docker_utils!
+
+BUNDLED WITH
+   1.11.2

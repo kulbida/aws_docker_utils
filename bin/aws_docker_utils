@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+require "docopt"
+require_relative "../lib/collectors/to_s3.rb"
+
+module AwsDockerUtils
+
+  VERSION = '0.0.3'
+  
+  doc = <<DOCOPT
+AWS Docker Utils Module.
+Author: Bogdan Kulbida.
+
+Usage:
+  #{__FILE__} backup_file from <container_name> to <s3_bucket_name> as <as_task> using <cmd>
+  #{__FILE__} -h | --help
+  #{__FILE__} --version
+
+Options:
+  -h --help     Show this screen.
+  --version     Show version.
+
+DOCOPT
+
+  begin
+    collector = Collectors::ToS3.new(Docopt::docopt(doc))
+    collector.push
+  rescue Docopt::Exit => e
+    puts e.message
+  end
+
+end
