@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require "docopt"
-require_relative "../lib/collectors/to_s3.rb"
+require_relative "../lib/aws_docker_utils/router.rb"
 
 module AwsDockerUtils
 
@@ -13,6 +13,8 @@ Author: Bogdan Kulbida.
 
 Usage:
   #{__FILE__} backup_file from <container_name> to <s3_bucket_name> as <as_task> using <cmd>
+  #{__FILE__} configure init
+  #{__FILE__} configure reset
   #{__FILE__} -h | --help
   #{__FILE__} --version
 
@@ -23,8 +25,7 @@ Options:
 DOCOPT
 
   begin
-    collector = Collectors::ToS3.new(Docopt::docopt(doc))
-    collector.push
+    Router.new(Docopt::docopt(doc)).route!.activate
   rescue Docopt::Exit => e
     puts e.message
   end

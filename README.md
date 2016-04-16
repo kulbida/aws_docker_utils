@@ -1,8 +1,23 @@
 #### This is WIP
 
 
-#####Usage:
+####Usage:
 
+##### Installation:
+```bash
+gem install aws_docker_utils
+```
+
+##### Set AWS credentials:
+```bash
+aws_docker_utils configure init
+```
+
+#####Reset (delete) stored AWS credentials:
+```bash
+aws_docker_utils configure reset
+```
+#####Create SQL from Docker container and upload SQL file to AWS S3:
 ```bash
 aws_docker_utils backup_file from \<container_name\> to \<s3_bucket_name\> as 'backup_database' using \<cmd\>
 ```
@@ -14,7 +29,10 @@ aws_docker_utils backup_file from database to 'my-super-bucket-name' as 'backup'
 
 The SQL backup file will be extacted from the database container, compressed and pushed to 'my-super-bucket-name' S3 bucket with the name like
 ```bash
-backup_16-04-15_16-34.sql.tar.gz
+backup_16-04-15_16-34.sql
 ```
 
 If the AWS S3 bucket is not exists, it will be created.
+
+#####License
+Author: Bogdan Kulbida, under MIT Lic. 2016.
