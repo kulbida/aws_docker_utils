@@ -1,5 +1,6 @@
 #### This is WIP
 
+===
 
 ####Usage:
 
@@ -7,6 +8,9 @@
 ```bash
 gem install aws_docker_utils
 ```
+#### Configuration (optional, unless EC2 instance has attached roles/policies to access resources w/o credentials)
+
+The preferred way to execute this script on the machine that already has roles and policies attached using IAM. This conforms to the best AWS practices and makes your setup stable against security threat. But to be flexible, it is possible to configure this script to use any AWS credentials:
 
 ##### Set AWS credentials:
 ```bash
