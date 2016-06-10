@@ -36,7 +36,7 @@ The SQL backup file will be extacted from the database container, compressed and
 backup_16-04-15_16-34.sql
 ```
 
-If the AWS S3 bucket is not exists, it will be created.
+If the AWS S3 bucket does not exist, it will be created.
 
 #####License
 Author: Bogdan Kulbida, under MIT Lic. 2016.
