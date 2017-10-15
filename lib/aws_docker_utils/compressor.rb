@@ -6,8 +6,8 @@ module AwsDockerUtils
     end
 
     def compress
-      # for now it does nothing
-      @file_path
+      `tar -jcvf #{@file_path}.tar.gz2 #{@file_path}`
+      "#{@file_path}.tar.gz2"
     end
 
   end
