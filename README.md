@@ -1,7 +1,3 @@
-#### This is WIP
-
-===
-
 ####Usage:
 
 ##### Installation:
@@ -33,10 +29,10 @@ aws_docker_utils backup_file from database to 'my-super-bucket-name' as 'backup'
 
 The SQL backup file will be extacted from the database container, compressed and pushed to 'my-super-bucket-name' S3 bucket with the name like
 ```bash
-backup_16-04-15_16-34.sql
+backup_16-04-15_16-34.sql.tar.gz2
 ```
 
 If the AWS S3 bucket does not exist, it will be created.
 
 #####License
-Author: Bogdan Kulbida, under MIT Lic. 2016.
+Author: Bogdan Kulbida, under MIT Lic. 2016-2017.
